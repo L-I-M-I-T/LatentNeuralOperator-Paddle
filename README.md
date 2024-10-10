@@ -2,7 +2,7 @@
 
 Tian Wang and Chuang Wang. Latent Neural Operator for Solving Forward and Inverse PDE Problem. In Neural Information Processing Systems (NeurIPS), 2024. [[Paper]](https://arxiv.org/abs/2406.03923)
 
-We evaluate [Latent Neural Operator] using Paddle with six widely used PDE forward problem benchmarks provided by [FNO and GeoFNO](https://github.com/neuraloperator/neuraloperator).
+We evaluate [Latent Neural Operator](https://arxiv.org/abs/2406.03923) using Paddle with six widely used PDE forward problem benchmarks provided by [FNO and GeoFNO](https://github.com/neuraloperator/neuraloperator).
 
 **Latent Neural Operator (LNO) reaches the highest precision on four of these benchmarks, reduces the GPU memory by 50%, speeds up training 1.8 times and keeps the flexibility compared to previous SOTA method.**
 
