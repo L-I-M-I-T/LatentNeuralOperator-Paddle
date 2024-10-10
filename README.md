@@ -11,7 +11,7 @@ We evaluate [Latent Neural Operator](https://arxiv.org/abs/2406.03923) using Pad
 <br><br>
 <b>Table 1.</b> Prediction error on the six forward problems. The best result is in bold. We reproduce the
 Transolver by implementing codes independently (marked with ∗) besides the results claimed in
-the original paper[23]. The column labeled D.C. indicates whether the observation positions and
+the original paper. The column labeled D.C. indicates whether the observation positions and
 prediction positions are decoupled. Standard deviations are computed based on 5 independent trials
 </p>
 
