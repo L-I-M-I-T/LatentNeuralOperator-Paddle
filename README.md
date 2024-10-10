@@ -1,6 +1,8 @@
-# Latent Neural Operator for PDE Forward Problem
+# Latent Neural Operator (NeurIPS 2024)
 
-We evaluate [Latent Neural Operator](https://arxiv.org/abs/2406.03923) with six widely used PDE forward problem benchmarks provided by [FNO and GeoFNO](https://github.com/neuraloperator/neuraloperator). Here we provide the Paddle version of the LNO code. Due to the inherent differences between the two frameworks, there may be some discrepancies in the precision results compared to the PyTorch version.
+Tian Wang and Chuang Wang. Latent Neural Operator for Solving Forward and Inverse PDE Problem. In Neural Information Processing Systems (NeurIPS), 2024. [[Paper]](https://arxiv.org/abs/2406.03923)
+
+We evaluate [Latent Neural Operator] using Paddle with six widely used PDE forward problem benchmarks provided by [FNO and GeoFNO](https://github.com/neuraloperator/neuraloperator).
 
 **Latent Neural Operator (LNO) reaches the highest precision on four of these benchmarks, reduces the GPU memory by 50%, speeds up training 1.8 times and keeps the flexibility compared to previous SOTA method.**
 
@@ -49,17 +51,17 @@ bash scripts/LNO_Pipe.sh       # for Pipe
 If you find this repo useful, please cite our paper. 
 
 ```
-@article{wang2024latent,
+@inproceedings{wang2024LNO,
   title={Latent Neural Operator for Solving Forward and Inverse PDE Problems},
-  author={Wang, Tian and Wang, Chuang},
-  journal={arXiv preprint arXiv:2406.03923},
+  author={Tian Wang and Chuang Wang},
+  booktitle={Advances in Neural Information Processing},
   year={2024}
 }
 ```
 
 ## Contact
 
-If you have any questions or want to use the code, please contact [wangtian2022@ia.ac.cn](mailto:wangtian2022@ia.ac.cn).
+If you have any questions or want to use the code, please contact [wangtian2022@ia.ac.cn](mailto:wangtian2022@ia.ac.cn) or [wangchuang@ia.ac.cn](mailto:wangchuang@ia.ac.cn).
 
 ## Acknowledgement
 
