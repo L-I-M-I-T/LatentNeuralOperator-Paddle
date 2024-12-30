@@ -20,7 +20,7 @@ We evaluate [Latent Neural Operator](https://arxiv.org/abs/2406.03923) using Pad
 
 
 <p align="center">
-<img src=".\assets\Forward-1.png" height = "300" alt="" align=center />
+<img src=".\assets\Forward-1.png" height = "340" alt="" align=center />
 <br><br>
 <b>Table 1.</b> Prediction error on the six forward problems. The best result is in bold. "∗" means that the results of the method are reproduced by ourselves. "/" means that the method can not handle this benchmark. The column labeled D.C. indicates whether the observation positions and prediction positions are decoupled.
 </p>
