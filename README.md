@@ -26,26 +26,26 @@ We evaluate [Latent Neural Operator](https://arxiv.org/abs/2406.03923) using Pad
 </p>
 
 <p align="center">
-<img src=".\assets\Forward-2.png" height = "300" alt="" align=center />
+<img src=".\assets\Forward-2.png" height = "180" alt="" align=center />
 <br><br>
 <b>Table 2.</b> Comparison of efficiency between LNO and Transolver on the six forward problem benchmarks. Three metrics are measured: the number of parameters, the cost of GPU memory and the cost of training time per epoch.
 </p>
 
 <p align="center">
-<img src=".\assets\Inverse-3.png" height = "300" alt="" align=center />
+<img src=".\assets\Inverse-3.png" height = "200" alt="" align=center />
 <br><br>
 <b>Figure 3.</b> Visualization of Burgers’ equation with different observation situations in different regions. We propose a two-stage strategy. First, we interpolate the solution in the subdomain. Then, we extrapolate from the subdomain to the whole domain.
 </p>
 
 <p align="center">
-<img src=".\assets\Inverse-1.png" height = "300" alt="" align=center />
+<img src=".\assets\Inverse-1.png" height = "120" alt="" align=center />
 <br><br>
 <b>Table 3.</b> Relative MAE of different completers in the subdomain in the 1st stage of the inverse
 problem with different settings of observation ratio.
 </p>
 
 <p align="center">
-<img src=".\assets\Inverse-2.png" height = "300" alt="" align=center />
+<img src=".\assets\Inverse-2.png" height = "140" alt="" align=center />
 <br><br>
 <b>Table 4.</b> The reconstruction error of different propagators in the 2nd stage of the inverse problem.
 Propagators are trained to reconstruct the solution in the whole domain based on the ground truth
@@ -124,7 +124,7 @@ If you find this repo useful, please cite our paper.
 @inproceedings{wang2024LNO,
   title={Latent Neural Operator for Solving Forward and Inverse PDE Problems},
   author={Tian Wang and Chuang Wang},
-  booktitle={Advances in Neural Information Processing Systems},
+  booktitle={Advances in Neural Information Processing},
   year={2024}
 }
 ```
