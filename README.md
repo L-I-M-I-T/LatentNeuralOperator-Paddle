@@ -13,7 +13,7 @@ We evaluate [Latent Neural Operator](https://arxiv.org/abs/2406.03923) using Pad
 </p>
 
 <p align="center">
-<img src=".\assets\PhCA.png" height = "300" alt="" align=center />
+<img src=".\assets\phca.png" height = "300" alt="" align=center />
 <br><br>
 <b>Figure 2.</b> The working mechanism of Physics-Cross-Attention in encoder and decoder respectively.
 </p>
