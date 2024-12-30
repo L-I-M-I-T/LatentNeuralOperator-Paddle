@@ -1,0 +1,42 @@
+{
+    "role": "completer",
+    "data": {
+        "name": "Burgers_IC_std",
+        "train_batch_size" : 4,
+        "val_batch_size": 32,
+        "test_batch_size": 32
+    },
+    "model": {
+        "name": "LNO",
+        "n_block": 4,
+        "n_mode": 256,
+        "n_dim" : 96,
+        "n_head" : 8,
+        "n_layer": 3,
+        "attn": "Attention_Vanilla",
+        "act": "GELU"
+    },
+    "loss": {
+        "name": "MSE"
+    },
+    "optimizer": {
+        "name": "Adam",
+        "lr": 1e-3
+    },
+    "scheduler": {
+        "name": "Step",
+        "step_size": 50,
+        "gamma": 0.7
+    },
+    "observation":{
+        "method": "random",
+        "initial_region": [0.5, 1.0],
+        "initial_ratio": 0.1
+    },
+    "train":{
+        "epoch": 500,
+        "log_print_interval_epoch": 1,
+        "model_save_interval_epoch": 50,
+        "grad_clip": 1000.0
+    }
+}

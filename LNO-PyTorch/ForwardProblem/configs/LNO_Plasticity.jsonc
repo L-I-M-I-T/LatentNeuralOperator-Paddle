@@ -1,0 +1,39 @@
+{
+    "data": {
+        "name": "Plasticity",
+        "train_batch_size" : 4,
+        "val_batch_size": 4
+    },
+    "model": {
+        "name": "LNO",
+        "n_block": 8,
+        "n_mode": 256,
+        "n_dim" : 128,
+        "n_head" : 8,
+        "n_layer": 3,
+        "attn": "Attention_Vanilla",
+        "act": "GELU"
+    },
+    "loss": {
+        "name": "rL2"
+    },  
+    "optimizer": {
+        "name": "AdamW",
+        "lr": 1e-3,
+        "weight_decay": 0.00005,
+        "beta0": 0.9,
+        "beta1": 0.99
+    },
+    "scheduler": {
+        "name": "OneCycle",
+        "div_factor": 1e4,
+        "final_div_factor": 1e4,
+        "pct_start": 0.2
+    },
+    "train":{
+        "epoch": 500,
+        "log_print_interval_epoch": 1,
+        "model_save_interval_epoch": 50,
+        "grad_clip": 1000.0
+    }
+}

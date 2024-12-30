@@ -1,0 +1,48 @@
+{
+    "role": "propagator",
+    "data": {
+        "name": "Burgers_IC_std",
+        "train_batch_size" : 4,
+        "val_batch_size": 32,
+        "test_batch_size": 32
+    },
+    "model": {
+        "name": "LNO",
+        "n_block": 4,
+        "n_mode": 256,
+        "n_dim" : 96,
+        "n_head" : 8,
+        "n_layer": 3,
+        "attn": "Attention_Vanilla",
+        "act": "GELU"
+    },
+    "loss": {
+        "name": "MSE"
+    },
+    "optimizer": {
+        "name": "AdamW",
+        "lr": 1e-3,
+        "weight_decay": 0.00005,
+        "beta0": 0.9,
+        "beta1": 0.99
+    },
+    "scheduler": {
+        "name": "OneCycle",
+        "div_factor": 1e4,
+        "final_div_factor": 1e4,
+        "pct_start": 0.2
+    },
+    "observation":{
+        "method": "random",
+        "initial_region": [0.5, 1.0],           //时间范围、空间范围
+        "initial_ratio": 1,                     //初始范围中的观测比例
+        "initial_predict": "N",                 //是否使用propagator进行补全, 为“N"时initial_ratio无效
+        "series_length": 2                      //分几步预测
+    },
+    "train":{
+        "epoch": 500,
+        "log_print_interval_epoch": 1,
+        "model_save_interval_epoch": 50,
+        "grad_clip": 1000.0
+    }
+}
