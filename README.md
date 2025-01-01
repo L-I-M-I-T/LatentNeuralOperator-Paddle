@@ -124,7 +124,7 @@ If you find this repo useful, please cite our paper.
 @inproceedings{wang2024LNO,
   title={Latent Neural Operator for Solving Forward and Inverse PDE Problems},
   author={Tian Wang and Chuang Wang},
-  booktitle={Advances in Neural Information Processing System},
+  booktitle={Advances in Neural Information Processing Systems},
   year={2024}
 }
 ```
