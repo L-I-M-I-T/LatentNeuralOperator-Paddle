@@ -19,7 +19,7 @@ arg = parser.parse_args()
 
 def train(train_dataloader,
           val_dataloader,
-          transformer,
+          normalizer,
           model,
           model_attr,
           loss_fn,
@@ -87,7 +87,7 @@ def train(train_dataloader,
 
         train_loss = train_loss / len(train_dataloader)
         train_loss = train_loss.item()
-        val_loss = val(val_dataloader, transformer, model, model_attr, loss_fn, local_rank, world_size)
+        val_loss = val(val_dataloader, normalizer, model, model_attr, loss_fn, local_rank, world_size)
         val_loss = val_loss.item()
         
         if local_rank == 0:
@@ -115,7 +115,7 @@ def train(train_dataloader,
 
 
 def val(val_dataloader,
-        transformer,
+        normalizer,
         model,
         model_attr,
         loss_fn,
@@ -142,9 +142,9 @@ def val(val_dataloader,
             else:
                 res = model(x, y1)
 
-            if transformer.is_apply_y2():
-                res = transformer.apply_y2(res, inverse=True)
-                y2 = transformer.apply_y2(y2, inverse=True)
+            if normalizer.is_apply_y2():
+                res = normalizer.apply_y2(res, inverse=True)
+                y2 = normalizer.apply_y2(y2, inverse=True)
             
             loss = loss_fn(res, y2)
             
@@ -159,7 +159,7 @@ def val(val_dataloader,
 
 def train_time(train_dataloader,
           val_dataloader,
-          transformer,
+          normalizer,
           model,
           model_attr,
           loss_fn,
@@ -250,7 +250,7 @@ def train_time(train_dataloader,
         train_loss_step = (train_loss_step / len(train_dataloader)).item()
         train_loss_full = (train_loss_full / len(train_dataloader)).item()
         
-        val_loss_step, val_loss_full = val_time(val_dataloader, transformer, model, model_attr, loss_fn, local_rank, world_size)
+        val_loss_step, val_loss_full = val_time(val_dataloader, normalizer, model, model_attr, loss_fn, local_rank, world_size)
         val_loss_step = val_loss_step.item()
         val_loss_full = val_loss_full.item()
         
@@ -284,7 +284,7 @@ def train_time(train_dataloader,
 
 
 def val_time(val_dataloader,
-        transformer,
+        normalizer,
         model,
         model_attr,
         loss_fn,
@@ -362,7 +362,7 @@ if __name__ == "__main__":
         model_attr["time"] = False
     
     train_dataloader, val_dataloader, _, \
-    transformer, model, loss, optimizer, scheduler \
+    normalizer, model, loss, optimizer, scheduler \
     = get_model_data(config, model_attr, device)
     
     log_dir = "./experiments/{}/log/".format(arg.exp)
@@ -385,7 +385,7 @@ if __name__ == "__main__":
         train_time(
             train_dataloader,
             val_dataloader,
-            transformer,
+            normalizer,
             model,
             model_attr,
             loss,
@@ -404,7 +404,7 @@ if __name__ == "__main__":
         train(
             train_dataloader,
             val_dataloader,
-            transformer,
+            normalizer,
             model,
             model_attr,
             loss,
