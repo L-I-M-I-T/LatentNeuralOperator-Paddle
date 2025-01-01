@@ -81,14 +81,14 @@ class LNO_dataset(torch.utils.data.Dataset):
         self.dataset = np.load(data_file, allow_pickle=True).tolist()
         self.x = torch.tensor(self.dataset['x']).float()
         self.y1 = torch.tensor(self.dataset['y1']).float()
-        if data_name in ["DF", "PLA", "AR", "PIPE", "NS"]:
+        if data_name in ["Darcy", "Plasticity", "Airfoil", "Pipe", "NS2d"]:
             self.y1 = torch.cat((self.x, self.y1), dim=-1)
         self.y2 = torch.tensor(self.dataset['y2']).float()
         self.normalizer = LNO_dataset.Normalizer(self.x, self.y1, self.y2)
-        if data_name in ["DF", "ELA"]:
-            self.x = self.trans.apply_x(self.x)
-            self.y1 = self.trans.apply_y1(self.y1)
-            self.y2 = self.trans.apply_y2(self.y2)
+        if data_name in ["Darcy", "Elasticity"]:
+            self.x = self.normalizer.apply_x(self.x)
+            self.y1 = self.normalizer.apply_y1(self.y1)
+            self.y2 = self.normalizer.apply_y2(self.y2)
         self.l = self.x.shape[0]
 
     def __len__(self):
